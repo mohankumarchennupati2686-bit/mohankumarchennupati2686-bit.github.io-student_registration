@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h4>My Registrations</h4>
+{% if regs %}
+  <ul class="list-group">
+    {% for r in regs %}
+      <li class="list-group-item">{{r}}</li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>No registrations found.</p>
+{% endif %}
+{% endblock %}

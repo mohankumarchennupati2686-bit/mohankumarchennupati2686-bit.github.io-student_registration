@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h4>Admin: Payment Verification</h4>
+<form method="post" action="/admin/verify" class="mb-3 d-flex">
+  <input class="form-control me-2" name="utr" placeholder="Enter UTR to verify">
+  <button class="btn btn-success">Verify</button>
+</form>
+{% if regs %}
+  <ul class="list-group">
+    {% for r in regs %}
+      <li class="list-group-item">{{r}}</li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>No registrations yet.</p>
+{% endif %}
+{% endblock %}
